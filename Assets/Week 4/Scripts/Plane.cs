@@ -14,12 +14,27 @@ public class Plane : MonoBehaviour
 
     LineRenderer lineRenderer;
 
+    public Sprite[] planes = new Sprite[4]; 
+
 
     public AnimationCurve landing;
     float landingTimer;
 
+    SpriteRenderer spriteRenderer;
+
     private void Start()
     {
+        float xposition = Random.Range(-5, 5);
+        float yposition = Random.Range(-5, 5);
+        Vector3 pos = new Vector3(xposition, yposition, 0);
+        float zrotation = Random.Range(1, 3);
+
+        transform.position = pos;
+        transform.rotation = Quaternion.Euler(0, 0, zrotation);
+
+        spriteRenderer = GetComponent<SpriteRenderer>();
+        spriteRenderer.sprite = planes[Random.Range(0,3)];
+
         lineRenderer = GetComponent<LineRenderer>();
         lineRenderer.positionCount = 1;
         lineRenderer.SetPosition(0,transform.position);

@@ -217,6 +217,7 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+  runway: {fileID: 8245270696979073538, guid: 37368d29a27bf2642b6ef6f80c3f85d1, type: 3}
 --- !u!120 &5909524810588479435
 LineRenderer:
   serializedVersion: 2

@@ -22,6 +22,8 @@ public class Plane : MonoBehaviour
 
     SpriteRenderer spriteRenderer;
 
+    public GameObject runway;
+
     private void Start()
     {
         float xposition = Random.Range(-5, 5);
@@ -101,7 +103,11 @@ public class Plane : MonoBehaviour
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        spriteRenderer.color = Color.red;
+        if(collision.gameObject != runway.gameObject)
+        {
+            spriteRenderer.color = Color.red;
+        }
+        //spriteRenderer.color = Color.red;
     }
     private void OnTriggerExit2D(Collider2D collision)
     {
@@ -110,7 +116,7 @@ public class Plane : MonoBehaviour
     private void OnTriggerStay2D(Collider2D collision)
     {
         float Dist = Vector3.Distance(transform.position,collision.transform.position);
-        if (Dist < 0.5)
+        if (Dist < 0.5 && collision.gameObject != runway.gameObject)
         {
             Destroy(gameObject);
         }

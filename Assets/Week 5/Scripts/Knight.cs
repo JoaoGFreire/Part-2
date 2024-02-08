@@ -15,7 +15,7 @@ public class Knight : MonoBehaviour
     public float health;
     public float maxHealth = 5f;
 
-    public HealthBar healthBar;
+    
 
     Animator animator;
     void Start()
@@ -55,8 +55,7 @@ public class Knight : MonoBehaviour
     {
         if (isDead) return;
         clickingOnSelf = true;
-        TakeDamage(1);
-        healthBar.Takedamage(1);
+        SendMessage("TakeDamage", 1);
     }
     private void OnMouseUp()
     {

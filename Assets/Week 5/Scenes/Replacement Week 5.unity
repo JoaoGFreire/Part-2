@@ -469,8 +469,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: TakeSeven, Assembly-CSharp
+      - m_Target: {fileID: 1863041364672928287}
+        m_TargetAssemblyTypeName: ReplacementKnight, Assembly-CSharp
         m_MethodName: TakeDamage
         m_Mode: 4
         m_Arguments:
@@ -1171,6 +1171,7 @@ MonoBehaviour:
   speed: 3
   maxHealth: 10
   health: 0
+  HP: {fileID: 0}
 --- !u!1 &2114935608845314083
 GameObject:
   m_ObjectHideFlags: 0

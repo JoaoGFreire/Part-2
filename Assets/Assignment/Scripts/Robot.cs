@@ -14,9 +14,10 @@ public class Robot : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        float xposition = Random.Range(-2, 2);
-        Vector3 position = new Vector3 (xposition, 5, 0);
-        transform.position = position;
+        //float xposition = Random.Range(-2, 2);
+       
+        //Vector3 position = new Vector3 (xposition, yposition, 0);
+        //transform.position = position;
 
         GoalPos = goal.transform.position;
         //transform.rotation = Quaternion.Euler(0, 0, 0);

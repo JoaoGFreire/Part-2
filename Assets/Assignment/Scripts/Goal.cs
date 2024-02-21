@@ -13,7 +13,7 @@ public class Goal : MonoBehaviour
     public AnimationCurve shrinking;
     void Start()
     {
-        Vector3 position = new Vector3(5, -5, 0);
+        Vector3 position = new Vector3(0, -5, 0);
         transform.position = position;
     }
 
@@ -37,6 +37,7 @@ public class Goal : MonoBehaviour
     */
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        Debug.Log("its colliding");
         collision.gameObject.SendMessage("erase");
         //collision.gameObject.SendMessage("kill");
     }

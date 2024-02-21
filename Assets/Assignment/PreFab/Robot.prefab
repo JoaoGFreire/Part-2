@@ -101,33 +101,24 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 3
-  goal: {fileID: 917072693250977737, guid: faa8b0b68b567e7438716bcb03deec20, type: 3}
+  goal: {fileID: 172201650291926316, guid: 9211ba5bafef0d5459c860d38c10317f, type: 3}
   erasing:
     serializedVersion: 2
     m_Curve:
     - serializedVersion: 3
       time: 0
       value: 0
-      inSlope: 0
-      outSlope: 0
+      inSlope: 2
+      outSlope: 2
       tangentMode: 0
       weightedMode: 0
       inWeight: 0
       outWeight: 0
     - serializedVersion: 3
-      time: 0.94050837
-      value: 0.39405927
-      inSlope: 1.0643499
-      outSlope: 1.0643499
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    - serializedVersion: 3
       time: 1
       value: 1
-      inSlope: 2
-      outSlope: 2
+      inSlope: 0
+      outSlope: 0
       tangentMode: 0
       weightedMode: 0
       inWeight: 0

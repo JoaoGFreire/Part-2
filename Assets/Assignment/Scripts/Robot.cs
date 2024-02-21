@@ -11,13 +11,17 @@ public class Robot : MonoBehaviour
     Vector2 CurrentPos;
     Vector2 GoalPos;
     public GameObject goal;
+    float eraseTime;
+
+    public AnimationCurve erasing;
+
+
     // Start is called before the first frame update
     void Start()
     {
-        //float xposition = Random.Range(-2, 2);
-       
-        //Vector3 position = new Vector3 (xposition, yposition, 0);
-        //transform.position = position;
+        float xposition = Random.Range(-5, 5);
+        Vector3 position = new Vector3(xposition, 5, 0);
+        transform.position = position;
 
         GoalPos = goal.transform.position;
         //transform.rotation = Quaternion.Euler(0, 0, 0);
@@ -28,7 +32,7 @@ public class Robot : MonoBehaviour
     {
         CurrentPos = transform.position;
         Vector2 direction = GoalPos - CurrentPos;
-        float angle = Mathf.Atan2(direction.x, direction.y)*Mathf.Rad2Deg;
+        float angle = Mathf.Atan2(direction.x, direction.y) * Mathf.Rad2Deg;
         rb.rotation = -angle;
         rb.MovePosition(rb.position + (Vector2)transform.up * speed * Time.deltaTime);
 
@@ -36,6 +40,20 @@ public class Robot : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+
+    }
+    public void erase()
+    {
+        eraseTime -= 0.5f * Time.deltaTime;
+        float interpolation = erasing.Evaluate(eraseTime);
+        if(transform.localScale.z < interpolation)
+        {
+            Destroy(gameObject);
+        }
+        transform.localScale = Vector3.Lerp(Vector3.one,Vector3.zero,interpolation);
+    }
+    public void kill()
+    {
+        Destroy(gameObject);
     }
 }

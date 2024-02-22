@@ -18,17 +18,14 @@ public class SoccerPlayer : MonoBehaviour
         sr = GetComponent<SpriteRenderer>();
         //clickOnSelf = false;
         Selected(false);
+
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        //Selected(clickOnSelf);
-    }
+    // Update i
     private void OnMouseDown()
     {
         //clickOnSelf = true;
-        Selected(true);
+        Controller.SetSelectedPlayer(this);
     }
     public void Selected(bool clickOnSelf)
     {

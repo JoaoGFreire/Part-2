@@ -13,7 +13,7 @@ public class Goal : MonoBehaviour
     public AnimationCurve shrinking;
     void Start()
     {
-        Vector3 position = new Vector3(0, -5, 0);
+        Vector3 position = new Vector3(0, -6, 0);
         transform.position = position;
     }
 

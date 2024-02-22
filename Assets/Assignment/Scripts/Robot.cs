@@ -44,15 +44,19 @@ public class Robot : MonoBehaviour
     }
     public void erase()
     {
-        eraseTime += 0.5f * Time.deltaTime;
+        eraseTime += 1f * Time.deltaTime;
         float interpolation = erasing.Evaluate(eraseTime);
-        if(transform.localScale.z < 0.1f)
+        if(transform.localScale.y < 0.1f)
         {
             Destroy(gameObject);
         }
         transform.localScale = Vector3.Lerp(Vector3.one,Vector3.zero,interpolation);
     }
     public void kill()
+    {
+        Destroy(gameObject);
+    }
+    private void OnBecameInvisible()
     {
         Destroy(gameObject);
     }

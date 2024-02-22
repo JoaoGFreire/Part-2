@@ -3,6 +3,8 @@ using UnityEngine.EventSystems;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SocialPlatforms.Impl;
+using TMPro;
 
 public class Controller : MonoBehaviour
 {
@@ -11,7 +13,10 @@ public class Controller : MonoBehaviour
     float chargeValue;
     public float maxCharge = 1;
     Vector2 direction;
-    
+
+    public static int score = 0;
+
+    static TextMeshProUGUI scoreText;
     // Start is called before the first frame update
     public static SoccerPlayer selectedPlayer { get; private set; }
     public static void SetSelectedPlayer(SoccerPlayer player)
@@ -52,6 +57,11 @@ public class Controller : MonoBehaviour
         {
             direction = ((Vector2)Camera.main.ScreenToWorldPoint(Input.mousePosition) - (Vector2)selectedPlayer.transform.position).normalized * chargeValue;
         }
+    }
+    public static void IncreaseScore()
+    {
+        score += 1;
+        scoreText.text = score.ToString();
     }
     
 }

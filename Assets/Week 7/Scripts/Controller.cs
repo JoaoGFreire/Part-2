@@ -3,6 +3,7 @@ using UnityEngine.EventSystems;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class Controller : MonoBehaviour
 {
@@ -11,9 +12,13 @@ public class Controller : MonoBehaviour
     float chargeValue;
     public float maxCharge = 1;
     Vector2 direction;
+    TextMeshProUGUI scoreboard;
     
     // Start is called before the first frame update
     public static SoccerPlayer selectedPlayer { get; private set; }
+
+    public static int Score;
+    string scoreS;
     public static void SetSelectedPlayer(SoccerPlayer player)
     {
         if(selectedPlayer != null)
@@ -53,5 +58,15 @@ public class Controller : MonoBehaviour
             direction = ((Vector2)Camera.main.ScreenToWorldPoint(Input.mousePosition) - (Vector2)selectedPlayer.transform.position).normalized * chargeValue;
         }
     }
+    public static void IncreaseScore()
+    {
+        Score += 1;
+    }
+    public void Scoreboard(int score)
+    {
+        //scoreS = (string)score;
+        scoreboard.text = Score.ToString();
+    }
+
     
 }

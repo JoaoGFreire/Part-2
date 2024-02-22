@@ -28,9 +28,17 @@ public class Rotate : MonoBehaviour
     public void RotateRight()
     {
         rotateR = !rotateR;
+        if (rotateL == true)
+        {
+            rotateL = false;
+        }
     }
     public void RotateLeft()
     {
         rotateL = !rotateL;
+        if (rotateR == true)
+        {
+            rotateR = false;
+        }
     }
 }
